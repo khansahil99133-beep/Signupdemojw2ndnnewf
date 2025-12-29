@@ -6,10 +6,6 @@ services:
     plan: free
     buildCommand: npm install --omit=dev
     startCommand: node src/index.js
-    disk:
-      name: backend-data
-      mountPath: /data
-      sizeGB: 1
     envVars:
       - key: NODE_ENV
         value: production
