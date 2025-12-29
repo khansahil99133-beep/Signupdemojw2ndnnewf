@@ -4,8 +4,6 @@ services:
     env: node
     rootDir: backend
     plan: free
-    buildCommand: npm install --omit=dev && npm run build:admin
-    startCommand: node src/index.js
     healthCheckPath: /health
     disk:
       name: backend-data
@@ -28,31 +26,6 @@ services:
         sync: false
       - key: SITE_NAME
         sync: false
-
-  - type: web
-    name: crick6-admin-frontend
-    env: docker
-    rootDir: frontend
-    plan: free
-    dockerfilePath: frontend/Dockerfile.admin
-    dockerBuildContext: frontend
-    startCommand: nginx -g "daemon off;"
-    healthCheckPath: /admin/login
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: ADMIN_USER
-        value: admin
-      - key: ADMIN_PASS
-        value: admin12345
-      - key: JWT_SECRET
-        value: change-me-in-prod
-      - key: PUBLIC_BASE_URL
-        value: https://signupdemojw1nnewf.onrender.com
-      - key: COOKIE_SECURE
-        value: "false"
-      - key: SITE_NAME
-        value: Sign UP Jeetwin
 
   - type: static
     name: crick6-frontend
