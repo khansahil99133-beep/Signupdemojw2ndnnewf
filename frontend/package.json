@@ -7,9 +7,11 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 5173",
     "build": "vite build",
+    "build:admin": "cross-env VITE_APP_MODE=admin VITE_BASE=/ VITE_API_BASE= npm run build",
     "preview": "vite preview --host 0.0.0.0 --port 4173",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -r https://github.com/khansahil99133-beep/s1upjwdemonew.git"
+    "deploy": "gh-pages -d dist -r https://github.com/khansahil99133-beep/s1upjwdemonew.git",
+    "lint": "eslint src --ext ts,tsx"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -21,6 +23,12 @@
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^5.0.0",
     "typescript": "^5.5.4",
     "vite": "^5.4.2"

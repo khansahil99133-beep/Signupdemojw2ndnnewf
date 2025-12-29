@@ -10,6 +10,7 @@ docker compose up -d --build
 
 - Public: http://localhost:8081/
 - Admin:  http://localhost:8082/admin/login
+- Local dev sets `COOKIE_SECURE=false` (see `.env`) so the admin session cookie works over plain HTTP.
 
 ## Render (Backend)
 
@@ -29,6 +30,9 @@ Create a Render **Web Service** from this repo.
 
 ### Persistent disk
 Add a disk mounted at `/data`.
+
+### Admin UI on the backend
+The backend build now runs the admin frontend (`npm run build:admin`) and serves the resulting assets from `/admin` (and the root `/` path) so visiting your Render backend URL opens the admin console directly. The build script relies on the same `frontend` source tree, so you can customize the admin UI by editing `frontend/src` and committing the changes before deploying again. Ensure the backend service still has `SITE_NAME`/`PUBLIC_BASE_URL` set appropriately so the UI renders with the right branding and API host.
 
 ## Vercel (Two separate projects)
 

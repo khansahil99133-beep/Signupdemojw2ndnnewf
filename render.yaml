@@ -4,7 +4,7 @@ services:
     env: node
     rootDir: backend
     plan: free
-    buildCommand: npm install --omit=dev
+    buildCommand: npm install --omit=dev && npm run build:admin
     startCommand: node src/index.js
     healthCheckPath: /health
     disk:

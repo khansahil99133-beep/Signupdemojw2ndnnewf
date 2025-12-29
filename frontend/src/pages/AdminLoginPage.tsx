@@ -10,7 +10,7 @@ import { resolveErrorMessage } from "../utils/errors";
 export default function AdminLoginPage() {
   const nav = useNavigate();
   const [username, setUsername] = useState("admin");
-  const [password, setPassword] = useState("admin123");
+  const [password, setPassword] = useState("admin12345");
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState<ToastState>({ kind: "idle" });

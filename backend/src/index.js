@@ -44,7 +44,7 @@ if (corsOrigins.length) {
 const PORT = Number(process.env.PORT || 8080);
 const DATA_DIR = process.env.DATA_DIR || "/data";
 const ADMIN_USER = process.env.ADMIN_USER || "admin";
-const ADMIN_PASS = process.env.ADMIN_PASS || "admin123";
+const ADMIN_PASS = process.env.ADMIN_PASS || "admin12345";
 const JWT_SECRET = process.env.JWT_SECRET || "change-me";
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "8h";
 const RESERVED_USERNAMES = process.env.RESERVED_USERNAMES || "";
@@ -101,15 +101,29 @@ const upload = multer({
 
 app.use("/uploads", express.static(UPLOADS_DIR, { maxAge: "7d", etag: true }));
 
-app.get("/", (_req, res) => {
-  res
-    .type("text/plain")
-    .send("Sign UP Jeetwin backend is running. Use /health or /api/* endpoints.");
-});
-
 app.get("/health", (_req, res) => {
   res.json({ ok: true });
 });
+
+const ADMIN_UI_DIST = path.join(process.cwd(), "..", "frontend", "dist");
+const hasAdminUi = fs.existsSync(ADMIN_UI_DIST) && fs.statSync(ADMIN_UI_DIST).isDirectory();
+const sendAdminApp = (_req, res) => {
+  res.sendFile(path.join(ADMIN_UI_DIST, "index.html"));
+};
+
+if (hasAdminUi) {
+  app.use(express.static(ADMIN_UI_DIST, { index: false }));
+  app.get("/", sendAdminApp);
+  app.get("/admin", sendAdminApp);
+  app.get("/admin/login", sendAdminApp);
+  app.get("/admin/*", sendAdminApp);
+} else {
+  app.get("/", (_req, res) => {
+    res
+      .type("text/plain")
+      .send("Sign UP Jeetwin backend is running. Use /health or /api/* endpoints.");
+  });
+}
 
 function publicUser(u) {
   const { passwordHash: _, ...rest } = u;

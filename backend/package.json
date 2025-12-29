@@ -5,7 +5,8 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "build:admin": "cd ../frontend && npm install && npm run build:admin"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
