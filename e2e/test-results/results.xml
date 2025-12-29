@@ -1,0 +1,8 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="4.136441">
+<testsuite name="signup-admin.spec.ts" timestamp="2025-12-27T18:17:13.024Z" hostname="chromium" tests="2" failures="0" skipped="0" time="2.596" errors="0">
+<testcase name="admin can login, create blog post, and read metrics" classname="signup-admin.spec.ts" time="1.442">
+</testcase>
+<testcase name="signup flow and related posts are visible" classname="signup-admin.spec.ts" time="1.154">
+</testcase>
+</testsuite>
+</testsuites>

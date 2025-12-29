@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/uploads/(.*)", "dest": "/api/uploads/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

@@ -1,0 +1,47 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    environment:
+      - NODE_ENV=production
+      - DATA_DIR=/data
+      - JWT_SECRET=${JWT_SECRET}
+      - ADMIN_USER=${ADMIN_USER}
+      - ADMIN_PASS=${ADMIN_PASS}
+      - PUBLIC_BASE_URL=${PUBLIC_BASE_URL}
+      - SITE_NAME=${SITE_NAME}
+    volumes:
+      - backend_data:/data
+    expose:
+      - "8080"
+
+  public_frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_SITE_NAME=${VITE_SITE_NAME}
+        - VITE_BRAND_NAME=${VITE_BRAND_NAME}
+        - VITE_APP_MODE=all
+        - VITE_BASE=/
+    depends_on:
+      - backend
+    ports:
+      - "${FRONTEND_PORT}:80"
+
+  admin_frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.admin
+      args:
+        - VITE_SITE_NAME=${VITE_SITE_NAME}
+        - VITE_BRAND_NAME=${VITE_BRAND_NAME}
+        - VITE_APP_MODE=all
+        - VITE_BASE=/
+    depends_on:
+      - backend
+    ports:
+      - "${ADMIN_FRONTEND_PORT}:80"
+
+volumes:
+  backend_data:

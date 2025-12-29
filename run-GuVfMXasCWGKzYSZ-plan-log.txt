@@ -1,0 +1,88 @@
+Terraform v1.14.3
+on linux_amd64
+Initializing plugins and modules...
+2025-12-27T19:08:59.307Z [INFO]  Terraform version: 1.14.3
+2025-12-27T19:08:59.307Z [DEBUG] using github.com/hashicorp/go-tfe v1.94.0
+2025-12-27T19:08:59.308Z [DEBUG] using github.com/hashicorp/hcl/v2 v2.24.0
+2025-12-27T19:08:59.308Z [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2025-12-27T19:08:59.308Z [DEBUG] using github.com/zclconf/go-cty v1.16.3
+2025-12-27T19:08:59.308Z [INFO]  Go runtime version: go1.25.5
+2025-12-27T19:08:59.308Z [INFO]  CLI args: []string{"/home/tfc-agent/.tfc-agent/component/terraform/runs/run-GuVfMXasCWGKzYSZ/bin/terraform", "init"}
+2025-12-27T19:08:59.308Z [TRACE] Stdout is not a terminal
+2025-12-27T19:08:59.308Z [TRACE] Stderr is not a terminal
+2025-12-27T19:08:59.308Z [TRACE] Stdin is not a terminal
+2025-12-27T19:08:59.308Z [DEBUG] Attempting to open CLI config file: ./.terraformrc
+2025-12-27T19:08:59.308Z [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2025-12-27T19:08:59.308Z [DEBUG] Not reading CLI config directory because config location is overridden by environment variable
+There are some problems with the CLI configuration:
+╷
+│ Warning: Unable to open CLI configuration file
+│
+│ The CLI configuration file at "./.terraformrc" does not exist.
+╵
+
+2025-12-27T19:08:59.308Z [DEBUG] checking for credentials in "/home/tfc-agent/.tfc-agent/component/terraform/runs/run-GuVfMXasCWGKzYSZ/.terraform.d/plugins"
+2025-12-27T19:08:59.308Z [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2025-12-27T19:08:59.308Z [DEBUG] will search for provider plugins in /home/tfc-agent/.tfc-agent/component/terraform/runs/run-GuVfMXasCWGKzYSZ/.terraform.d/plugins
+2025-12-27T19:08:59.309Z [DEBUG] ignoring non-existing provider search directory /home/tfc-agent/.tfc-agent/component/terraform/runs/run-GuVfMXasCWGKzYSZ/.local/share/terraform/plugins
+2025-12-27T19:08:59.309Z [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2025-12-27T19:08:59.309Z [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2025-12-27T19:08:59.309Z [INFO]  CLI command args: []string{"init"}
+[0m[1mInitializing HCP Terraform...[0m
+2025-12-27T19:08:59.314Z [TRACE] Meta.Backend: built configuration for "cloud" backend with hash value 332836588
+2025-12-27T19:08:59.314Z [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2025-12-27T19:08:59.314Z [TRACE] Meta.Backend: moving from default local state only to "cloud" backend
+2025-12-27T19:08:59.314Z [TRACE] providercache.fillMetaCache: scanning directory .terraform/providers
+2025-12-27T19:08:59.314Z [TRACE] getproviders.SearchLocalDirectory: failed to resolve symlinks for .terraform/providers: lstat .terraform: no such file or directory
+2025-12-27T19:08:59.314Z [TRACE] providercache.fillMetaCache: error while scanning directory .terraform/providers: cannot search .terraform/providers: lstat .terraform/providers: no such file or directory
+2025-12-27T19:08:59.314Z [DEBUG] checking for provisioner in "."
+2025-12-27T19:08:59.315Z [DEBUG] checking for provisioner in "/home/tfc-agent/.tfc-agent/component/terraform/runs/run-GuVfMXasCWGKzYSZ/bin"
+2025-12-27T19:08:59.315Z [DEBUG] checking for provisioner in "/home/tfc-agent/.tfc-agent/component/terraform/runs/run-GuVfMXasCWGKzYSZ/.terraform.d/plugins"
+2025-12-27T19:08:59.315Z [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2025-12-27T19:08:59.315Z [TRACE] statemgr.Filesystem: reading initial snapshot from terraform.tfstate
+2025-12-27T19:08:59.315Z [TRACE] statemgr.Filesystem: snapshot file has nil snapshot, but that's okay
+2025-12-27T19:08:59.315Z [TRACE] statemgr.Filesystem: read nil snapshot
+2025-12-27T19:08:59.315Z [TRACE] Meta.Backend: ignoring local "default" workspace because its state is empty
+2025-12-27T19:08:59.315Z [TRACE] Meta.Backend: HCP Terraform or Terraform Enterprise mode initialization type: ConfigChangeInPlace
+2025-12-27T19:08:59.315Z [TRACE] cloud: using hostname "app.terraform.io" from cloud config block
+2025-12-27T19:08:59.315Z [TRACE] cloud: using organization "Softupakaran" from cloud config block
+2025-12-27T19:08:59.315Z [TRACE] cloud: found workspace name "softupakaran-terraform" in cloud config block
+2025-12-27T19:08:59.315Z [TRACE] cloud: using project "" from TF_CLOUD_PROJECT variable
+2025-12-27T19:08:59.315Z [TRACE] cloud: using workspace name "softupakaran-terraform" from cloud config block
+2025-12-27T19:08:59.315Z [DEBUG] Service discovery for app.terraform.io at https://app.terraform.io/.well-known/terraform.json
+2025-12-27T19:08:59.315Z [TRACE] HTTP client GET request to https://app.terraform.io/.well-known/terraform.json
+2025-12-27T19:08:59.404Z [TRACE] Meta.BackendForPlan: backend *cloud.Cloud supports operations
+2025-12-27T19:08:59.404Z [DEBUG] Service discovery for app.terraform.io aliased as localterraform.com
+2025-12-27T19:08:59.406Z [TRACE] Meta.selectWorkspace: automatically selecting the single workspace provided by the backend (softupakaran-terraform)
+2025-12-27T19:08:59.406Z [TRACE] Meta.Backend: instantiated backend of type *cloud.Cloud
+2025-12-27T19:08:59.407Z [TRACE] providercache.fillMetaCache: scanning directory .terraform/providers
+2025-12-27T19:08:59.407Z [TRACE] getproviders.SearchLocalDirectory: failed to resolve symlinks for .terraform/providers: lstat .terraform/providers: no such file or directory
+2025-12-27T19:08:59.407Z [TRACE] providercache.fillMetaCache: error while scanning directory .terraform/providers: cannot search .terraform/providers: lstat .terraform/providers: no such file or directory
+2025-12-27T19:08:59.407Z [DEBUG] checking for provisioner in "."
+2025-12-27T19:08:59.407Z [DEBUG] checking for provisioner in "/home/tfc-agent/.tfc-agent/component/terraform/runs/run-GuVfMXasCWGKzYSZ/bin"
+2025-12-27T19:08:59.407Z [DEBUG] checking for provisioner in "/home/tfc-agent/.tfc-agent/component/terraform/runs/run-GuVfMXasCWGKzYSZ/.terraform.d/plugins"
+2025-12-27T19:08:59.407Z [TRACE] Meta.Backend: backend *cloud.Cloud supports operations
+2025-12-27T19:08:59.492Z [TRACE] Intermediate state interval is set by header to 0s
+[0m[1mInitializing provider plugins...[0m
+- Finding render/render versions matching ">= 1.29.0"...
+2025-12-27T19:08:59.493Z [DEBUG] Service discovery for registry.terraform.io at https://registry.terraform.io/.well-known/terraform.json
+2025-12-27T19:08:59.493Z [TRACE] HTTP client GET request to https://registry.terraform.io/.well-known/terraform.json
+2025-12-27T19:08:59.502Z [DEBUG] GET https://registry.terraform.io/v1/providers/render/render/versions
+2025-12-27T19:08:59.502Z [TRACE] HTTP client GET request to https://registry.terraform.io/v1/providers/render/render/versions
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mFailed to query available provider packages[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mCould not retrieve the list of available versions for provider
+[31m│[0m [0mrender/render: provider registry registry.terraform.io does not have a
+[31m│[0m [0mprovider named registry.terraform.io/render/render
+[31m│[0m [0m
+[31m│[0m [0mAll modules should specify their required_providers so that external
+[31m│[0m [0mconsumers will get the correct providers when using a module. To see which
+[31m│[0m [0mmodules are currently depending on render/render, run the following
+[31m│[0m [0mcommand:
+[31m│[0m [0m    terraform providers
+[31m╵[0m[0m
+Operation failed: failed running terraform init (exit 1)

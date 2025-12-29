@@ -1,0 +1,15 @@
+Terraform v1.14.3
+on linux_amd64
+Initializing plugins and modules...
+There are some problems with the CLI configuration:
+╷
+│ Warning: Unable to open CLI configuration file
+│
+│ The CLI configuration file at "./.terraformrc" does not exist.
+╵
+
+{"@level":"info","@message":"Terraform 1.14.3","@module":"terraform.ui","@timestamp":"2025-12-27T18:41:12.915407Z","terraform":"1.14.3","type":"version","ui":"1.2"}
+{"@level":"warn","@message":"Warning: Value for undeclared variable","@module":"terraform.ui","@timestamp":"2025-12-27T18:41:13.305321Z","diagnostic":{"severity":"warning","summary":"Value for undeclared variable","detail":"The root module does not declare a variable named \"render_plan\" but a value was found in file \"/home/tfc-agent/.tfc-agent/component/terraform/runs/run-sNiUMBKet9CTbwoP/terraform.tfvars\". If you meant to use this value, add a \"variable\" block to the configuration.\n\nTo silence these warnings, use TF_VAR_... environment variables to provide certain \"global\" settings to all configurations in your organization. To reduce the verbosity of these warnings, use the -compact-warnings option."},"type":"diagnostic"}
+{"@level":"warn","@message":"Warning: Value for undeclared variable","@module":"terraform.ui","@timestamp":"2025-12-27T18:41:13.305472Z","diagnostic":{"severity":"warning","summary":"Value for undeclared variable","detail":"The root module does not declare a variable named \"TF_CLI_CONFIG_FILE\" but a value was found in file \"/home/tfc-agent/.tfc-agent/component/terraform/runs/run-sNiUMBKet9CTbwoP/terraform.tfvars\". If you meant to use this value, add a \"variable\" block to the configuration.\n\nTo silence these warnings, use TF_VAR_... environment variables to provide certain \"global\" settings to all configurations in your organization. To reduce the verbosity of these warnings, use the -compact-warnings option."},"type":"diagnostic"}
+{"@level":"error","@message":"Error: Invalid resource type","@module":"terraform.ui","@timestamp":"2025-12-27T18:41:13.305817Z","diagnostic":{"severity":"error","summary":"Invalid resource type","detail":"The provider render-oss/render does not support resource type \"render_service\".","range":{"filename":"main.tf","start":{"line":15,"column":10,"byte":210},"end":{"line":15,"column":26,"byte":226}},"snippet":{"context":"resource \"render_service\" \"this\"","code":"resource \"render_service\" \"this\" {","start_line":15,"highlight_start_offset":9,"highlight_end_offset":25,"values":[]}},"type":"diagnostic"}
+Operation failed: failed running terraform plan (exit 1)

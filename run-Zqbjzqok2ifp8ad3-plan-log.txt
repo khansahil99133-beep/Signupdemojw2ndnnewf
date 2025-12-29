@@ -1,0 +1,15 @@
+Terraform v1.14.3
+on linux_amd64
+Initializing plugins and modules...
+There are some problems with the CLI configuration:
+╷
+│ Warning: Unable to open CLI configuration file
+│
+│ The CLI configuration file at "./.terraformrc" does not exist.
+╵
+
+{"@level":"info","@message":"Terraform 1.14.3","@module":"terraform.ui","@timestamp":"2025-12-27T18:37:10.746135Z","terraform":"1.14.3","type":"version","ui":"1.2"}
+{"@level":"warn","@message":"Warning: Value for undeclared variable","@module":"terraform.ui","@timestamp":"2025-12-27T18:37:11.134138Z","diagnostic":{"severity":"warning","summary":"Value for undeclared variable","detail":"The root module does not declare a variable named \"TF_CLI_CONFIG_FILE\" but a value was found in file \"/home/tfc-agent/.tfc-agent/component/terraform/runs/run-Zqbjzqok2ifp8ad3/terraform.tfvars\". If you meant to use this value, add a \"variable\" block to the configuration.\n\nTo silence these warnings, use TF_VAR_... environment variables to provide certain \"global\" settings to all configurations in your organization. To reduce the verbosity of these warnings, use the -compact-warnings option."},"type":"diagnostic"}
+{"@level":"warn","@message":"Warning: Value for undeclared variable","@module":"terraform.ui","@timestamp":"2025-12-27T18:37:11.134288Z","diagnostic":{"severity":"warning","summary":"Value for undeclared variable","detail":"The root module does not declare a variable named \"render_plan\" but a value was found in file \"/home/tfc-agent/.tfc-agent/component/terraform/runs/run-Zqbjzqok2ifp8ad3/terraform.tfvars\". If you meant to use this value, add a \"variable\" block to the configuration.\n\nTo silence these warnings, use TF_VAR_... environment variables to provide certain \"global\" settings to all configurations in your organization. To reduce the verbosity of these warnings, use the -compact-warnings option."},"type":"diagnostic"}
+{"@level":"error","@message":"Error: Unsupported argument","@module":"terraform.ui","@timestamp":"2025-12-27T18:37:11.134653Z","diagnostic":{"severity":"error","summary":"Unsupported argument","detail":"An argument named \"region\" is not expected here.","range":{"filename":"main.tf","start":{"line":13,"column":3,"byte":200},"end":{"line":13,"column":9,"byte":206}},"snippet":{"context":"provider \"render\"","code":"  region  = var.render_region","start_line":13,"highlight_start_offset":2,"highlight_end_offset":8,"values":[]}},"type":"diagnostic"}
+Operation failed: failed running terraform plan (exit 1)
