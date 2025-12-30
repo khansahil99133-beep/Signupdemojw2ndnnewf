@@ -51,6 +51,7 @@ Create **two** Vercel projects pointing to the same folder:
 - `BACKEND_ORIGIN=https://YOUR-RENDER-SERVICE.onrender.com`
 - `VITE_SITE_NAME=...`
 - `VITE_BRAND_NAME=...`
+- `VITE_ADMIN_API_BASE=` *(optional)* keep this blank to use the `/api/*` proxy on Vercel; set it to your backend URL only if you want the admin UI to hit the API directly.
 
 Notes:
 - `/api/*` is proxied by Vercel Serverless Functions in `frontend/api/*`.

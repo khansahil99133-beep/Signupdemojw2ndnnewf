@@ -9,14 +9,7 @@ import BlogListPage from "./pages/BlogListPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import BlogTagPage from "./pages/BlogTagPage";
 import SuccessPage from "./pages/SuccessPage";
-
-type AppMode = "all" | "public" | "admin";
-
-function getAppMode(): AppMode {
-  const raw = (import.meta.env.VITE_APP_MODE ?? "all").toString().toLowerCase();
-  if (raw === "public" || raw === "admin" || raw === "all") return raw;
-  return "all";
-}
+import { getAppMode } from "./utils/appMode";
 
 export default function App() {
   const mode = getAppMode();

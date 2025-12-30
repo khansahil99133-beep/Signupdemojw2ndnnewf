@@ -1,4 +1,16 @@
-const API_BASE = (import.meta.env.VITE_API_BASE ?? "").replace(/\/$/, "");
+import { getAppMode } from "./utils/appMode";
+
+function normalizeApiBase(raw?: string | null): string | null {
+  if (typeof raw !== "string") return null;
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+  return trimmed.replace(/\/$/, "");
+}
+
+const appMode = getAppMode(import.meta.env.VITE_APP_MODE);
+const adminApiBase = normalizeApiBase(import.meta.env.VITE_ADMIN_API_BASE);
+const publicApiBase = normalizeApiBase(import.meta.env.VITE_API_BASE);
+const API_BASE = (appMode === "admin" ? adminApiBase : publicApiBase) ?? "";
 
 function buildApiUrl(path: string) {
   const normalized = path.startsWith("/") ? path : `/${path}`;
