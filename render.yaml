@@ -4,7 +4,7 @@ services:
     runtime: node
     plan: free
     region: oregon
-    rootDir: crick6-stack/backend
+    rootDir: backend
     buildCommand: npm ci --omit=dev
     startCommand: node src/index.js
     healthCheckPath: /metrics
@@ -24,10 +24,10 @@ services:
         value: admin
 
       - key: ADMIN_PASS
-        sync: false
+        sync: admin12345
 
       - key: PUBLIC_BASE_URL
-        sync: false
+        sync: JSh1762152v3b213
 
       - key: CORS_ORIGINS
         sync: false

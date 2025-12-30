@@ -26,7 +26,7 @@ Create a Render **Web Service** from this repo.
 - `JWT_SECRET=...` (strong)
 - `ADMIN_USER=admin`
 - `ADMIN_PASS=...` (strong)
-- `PUBLIC_BASE_URL=https://YOUR_PUBLIC_FRONTEND_DOMAIN`
+- `PUBLIC_BASE_URL=https://khansahil99133-beep.github.io/Signupdemojw1nnewf/
 
 ### Persistent disk
 Add a disk mounted at `/data`.
