@@ -25,9 +25,9 @@ export default function AdminLoginPage() {
 
       setToast({ kind: "ok", msg: "Signed in!" });
 
-      // small delay so user sees success
+      // ✅ redirect to an EXISTING admin route
       window.setTimeout(() => {
-        nav("/admin");
+        nav("/admin/users");
       }, 300);
     } catch (err) {
       setToast({
