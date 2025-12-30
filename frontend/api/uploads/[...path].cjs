@@ -9,7 +9,7 @@ function getBackendOrigin() {
   return trimmed || null;
 }
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   const backend = getBackendOrigin();
   if (!backend) {
     res.statusCode = 500;
@@ -42,4 +42,4 @@ export default async function handler(req, res) {
 
   const buf = Buffer.from(await upstream.arrayBuffer());
   res.end(buf);
-}
+};
