@@ -1,29 +1,37 @@
 services:
   - type: web
-    name: crick6-backend
-    env: node
-    rootDir: backend
+    name: crick6-stack/backend
+    runtime: node
     plan: free
-    healthCheckPath: /health
-    disk:
-      name: backend-data
-      mountPath: /data
-      sizeGB: 1
+    region: oregon
+    rootDir: crick6-stack/backend
+    buildCommand: npm ci --omit=dev
+    startCommand: node src/index.js
+    healthCheckPath: /metrics
     envVars:
       - key: NODE_ENV
         value: production
+
+      # NOTE: Disks aren't available on free web services.
+      # Keep DATA_DIR as /tmp on free (data resets on deploy/restart).
       - key: DATA_DIR
-        value: /data
+        value: /tmp/data
+
       - key: JWT_SECRET
-        sync: false
+        generateValue: true
+
       - key: ADMIN_USER
-        sync: false
+        value: admin
+
       - key: ADMIN_PASS
         sync: false
+
       - key: PUBLIC_BASE_URL
         sync: false
+
       - key: CORS_ORIGINS
         sync: false
+
       - key: SITE_NAME
         sync: false
 

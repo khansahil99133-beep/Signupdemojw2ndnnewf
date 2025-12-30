@@ -3,14 +3,14 @@
   "version": "2.3.0",
   "private": true,
   "type": "module",
-  "homepage": "https://khansahil99133-beep.github.io/s1upjwdemonew/",
+  "homepage": "https://khansahil99133-beep.github.io/Signupdemojw1nnewf/",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 5173",
     "build": "vite build",
     "build:admin": "cross-env VITE_APP_MODE=admin VITE_BASE=/ VITE_API_BASE= npm run build",
     "preview": "vite preview --host 0.0.0.0 --port 4173",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -r https://github.com/khansahil99133-beep/s1upjwdemonew.git",
+    "deploy": "gh-pages -d dist -r https://github.com/khansahil99133-beep/Signupdemojw1nnewf.git",
     "lint": "eslint src --ext ts,tsx"
   },
   "dependencies": {
