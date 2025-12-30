@@ -19,12 +19,21 @@ export default function AdminLoginPage() {
     e.preventDefault();
     setToast({ kind: "idle" });
     setLoading(true);
+
     try {
       await adminLogin({ username, password });
+
       setToast({ kind: "ok", msg: "Signed in!" });
-      window.setTimeout(() => nav("/admin"), 250);
+
+      // small delay so user sees success
+      window.setTimeout(() => {
+        nav("/admin");
+      }, 300);
     } catch (err) {
-      setToast({ kind: "err", msg: resolveErrorMessage(err, "Login failed") });
+      setToast({
+        kind: "err",
+        msg: resolveErrorMessage(err, "Login failed"),
+      });
     } finally {
       setLoading(false);
     }
@@ -53,6 +62,7 @@ export default function AdminLoginPage() {
             onChange={setUsername}
             autoComplete="username"
           />
+
           <TextField
             label="Password"
             type={showPass ? "text" : "password"}
@@ -60,7 +70,11 @@ export default function AdminLoginPage() {
             onChange={setPassword}
             autoComplete="current-password"
             right={
-              <button className="miniBtn" type="button" onClick={() => setShowPass((s) => !s)}>
+              <button
+                className="miniBtn"
+                type="button"
+                onClick={() => setShowPass((s) => !s)}
+              >
                 {showPass ? "Hide" : "Show"}
               </button>
             }
@@ -70,6 +84,7 @@ export default function AdminLoginPage() {
             <Button type="submit" disabled={loading}>
               {loading ? "Signing in..." : "Sign in"}
             </Button>
+
             <div className="hint">
               Back to{" "}
               <a className="link" href="/">
